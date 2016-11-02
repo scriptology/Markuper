@@ -1,0 +1,11 @@
+//
+   Created by asolovyev on 02/11/16.
+
+span.doc-block__name {{ vm.currentElement.name }}
+
+div.doc-block__description
+    span {{ vm.currentElement.description }}
+
+div.doc-block__preview(ng-compile="vm.currentElement.template")
+
+div(hljs="", hljs-source="vm.currentElement.templateSource")

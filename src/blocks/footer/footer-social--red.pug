@@ -1,0 +1,29 @@
+.section-color.-red
+    .wrap
+        form.subscribe-form(name='subscribe', ng-submit='subscribeUser()')
+            label.subscribe-form__label
+                span(ng-if='!mobileCheck')
+                    | Подпишитесь на наши новости и&nbsp;
+                    strong.subscribe-form__label--strong получите подарок
+                span(ng-if="mobileCheck && subscribeStatus == 'init'")
+                    | Подпишитесь на наши новости и&nbsp;
+                    strong.subscribe-form__label--strong получите подарок
+                span(ng-if="subscribeStatus == 'init'")
+                    input.subscribe-form__input(name='email', type='email', placeholder='ваша@почта.ru', ng-model='email', required='required')
+                    button.subscribe-form__button(type='submit', ng-class="{'-valid': subscribe.$valid, '-active': subscribe.active}") ОК
+            p.subscribe-form__description(ng-if="subscribeStatus == 'success'")
+                | Спасибо, мы будем
+                = " "
+                br.hide--sm
+                | держать вас в курсе
+            p.subscribe-form__description(ng-if="subscribeStatus == 'badEmail'")
+                | Вы ввели некорректный email.
+                = " "
+                br.hide--sm
+                | Попробуйте
+                span.subscribe-form__description--link(ng-click='initForm()') еще раз
+            p.subscribe-form__description(ng-if="subscribeStatus == 'duplicate'")
+                | Этот email уже зарегистрирован.
+                = " "
+                br.hide--sm
+                span.subscribe-form__description--link(ng-click='initForm()') Ввести другой email

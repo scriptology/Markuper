@@ -1,0 +1,17 @@
+// Created by asolovyev on 02/11/16.
+
+.doc
+    .doc-top(ng-class="vm.showSidebar ? '': 'active'")
+        span.doc-top__logo(ng-click="vm.showSidebar = !vm.showSidebar") Markuper
+    .doc-sidebar(ng-if="vm.showSidebar")
+        span.doc-sidebar__logo(ng-click="vm.showSidebar = !vm.showSidebar") Markuper
+        ul
+            li(ng-repeat="block in vm.blocks", ng-mouseleave="showChild = false")
+                a(ng-href="{{ block.stateUrl }}", ng-mouseover="showChild = true", ng-class="vm.locationUrl == block.stateUrl ? 'active': ''") {{ block.name }}
+                .doc-sidebar--sub(ng-if="block.children", ng-class="showChild ? 'active': ''")
+                    ul
+                        li(ng-repeat="childBlock in block.children")
+                            a(ng-href="{{ childBlock.stateUrl }}", ng-class="vm.locationUrl == childBlock.stateUrl ? 'active': ''") {{ childBlock.name }}
+
+    .doc-content
+        div(ui-view="")

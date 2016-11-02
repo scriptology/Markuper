@@ -1,0 +1,70 @@
+// TEMP
+mixin temp-gq-logo
+    svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 40 18.898', xml:space='preserve')
+        g
+            path(clip-path='url(#SVGID_2_)', fill='#D9232A', d='M34.112,9.432c0,0.489-0.072,0.978-0.217,1.433l-0.722-0.874l-5.419,0.175\
+                        l2.854,3.493c-0.289,0.07-0.613,0.07-0.938,0.07c-2.564,0-4.407-1.922-4.407-4.297c0-2.375,1.807-4.262,4.407-4.262\
+                        S34.112,7.057,34.112,9.432 M37.616,15.406c1.3-1.572,2.059-3.633,2.059-5.974c0-5.519-4.623-9.431-10.005-9.431\
+                        c-4.877,0-9.103,3.179-9.861,7.929l-0.023,0.174l-0.02,2.552c-0.038-0.361,0.056,0.684,0.079,0.557\
+                        c0.831,4.576,4.769,7.685,9.825,7.685c1.625,0,3.143-0.314,4.479-0.908l0.434,0.524L40,18.339L37.616,15.406z')
+            path(clip-path='url(#SVGID_2_)', fill='#D9232A', d='M0,9.432c0-5.259,4.146-9.044,9.156-9.431C9.431,0,9.707,0,9.982,0\
+                        c0.484,0,0.96,0.016,1.429,0.046c5.394,0.61,7.686,4.656,8.22,6.591h-6.375c-0.722-0.908-1.553-1.502-3.25-1.502\
+                        c-2.601,0-4.443,1.921-4.443,4.296c0,2.375,1.878,4.262,4.443,4.262c1.77,0,2.998-0.769,3.359-1.293h-2.673V7.93h9.029L19.66,7.929\
+                        h0.149c0.071,0.489,0.109,1.001,0.109,1.526c0,0.623-0.07,1.187-0.18,1.767c-0.003-0.016,0.003,0.007,0-0.009\
+                        c-0.939,5.101-5.761,7.65-9.734,7.65C4.298,18.864,0,14.986,0,9.432')
+// end TEMP
+
+header.header
+    .header__top
+        .container.container--standart
+            a(href="#").gq-logo.gq-logo--lg
+                +temp-gq-logo
+
+    .header__navbar
+        .navbar
+            .container.container--standart
+                .navbar__inner
+                    .navbar__mobile
+                        .navbar__aside.navbar__aside--left
+                            .navbar__btn(role="button") &#128269;
+                        .navbar__logo
+                            a(href="#").gq-logo.gq-logo--md
+                                +temp-gq-logo
+                        .navbar__aside.navbar__aside--right
+                            .navbar__btn(role="button") &#8780;
+
+                    .navbar__desktop
+                        .navbar__logo
+                            a(href="#").gq-logo.gq-logo--md
+                                +temp-gq-logo
+
+                        nav.navbar__menu
+                            .menu__item
+                                a(href="#")
+                                    span #
+                                    |Стиль
+                            .menu__item
+                                a(href="#")
+                                    span #
+                                    |Герои
+                            .menu__item
+                                a(href="#")
+                                    span #
+                                    |Девушки
+                            .menu__item
+                                a(href="#")
+                                    span #
+                                    |Увлечения
+                            .menu__item
+                                a(href="#")
+                                    span #
+                                    |Видео
+
+                        .navbar__aside.navbar__aside--right
+                            .navbar__btn(role="button") &#8943;
+                            .navbar__btn(role="button") &#128269;
+
+    .header__search
+        .container.container--standart
+            form
+                input(type="search")
